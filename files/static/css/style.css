@@ -1,0 +1,81 @@
+.change-text {
+    transition: all 0.5s ease;
+}
+
+.change-text:hover {
+    transform: scale(1.1);
+    color: white
+}
+
+.button {
+    transition: all 0.5s ease;
+}
+
+div.button:hover {
+    transform: scale(1.1);
+}
+
+a.button:hover {
+    background-color: #1ed760;
+}
+
+.bg-mainColor1 {
+    background: #1f1f1f;
+    background: -webkit-linear-gradient(to top, #121212, #1c1c1c);
+    background: linear-gradient(to top, #121212, #1c1c1c);
+}
+
+.bg-cardColor {
+    transition: all 0.5s ease;
+    background: -webkit-linear-gradient(to top, #181818, #151515);
+}
+
+.bg-cardColor:hover {
+    background-color: #414141;
+    transform: scale(1.1);
+}
+
+.card {
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(29, 185, 84, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .play-button {
+    opacity: 1;
+}
+
+.footercolor {
+    background: -webkit-linear-gradient(to right, #af2997, #5199f3);
+    background: linear-gradient(to right, #af2997, #5199f3);
+}
+
+.regbut {
+    transition: all 0.5s ease;
+}
+
+.regbut:hover {
+    transform: scale(1.1);
+}
+
+.relative {
+    position: relative;
+    z-index: 1;
+}
+
+.fixed {
+    z-index: 1;
+}

@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <div class="bg-mainColor1 rounded-md h-full mt-[6%]">
+        <div class="mx-auto pl-7 pt-3">
+            <span class="font-bold text-3xl">
+                Музыка Spotify
+			</span>
+        </div>
+        <div class="container pl-7 pr-7 pt-7 grid grid-cols-5 gap-4">
+            {% for card in music %}
+                <a href="" class="bg-cardColor rounded-md h-70">
+                    <div class="container py-4 px-4 space-y-1">
+                        <div class="card w-[186px] h-[186px] rounded-md">
+                            <img src="{{ card.preview.url }}" alt="">
+                            <div class="play-button">Play</div>
+                        </div>
+                        <p class="font-bold">{{ card.name }}</p>
+                        <p class="text-Color1 text-sm">{{ card.author }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
