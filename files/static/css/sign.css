@@ -161,10 +161,15 @@ button:focus {
     flex-flow: column;
     box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    height: 560px;
+    padding-top: 70px;
+    height: auto;
     width: 360px;
     background: #fff;
     background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
+}
+
+.container{
+    height: auto;
 }
 
 .overlay {
@@ -190,6 +195,12 @@ button:focus {
     opacity: 0.1;
     background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') left no-repeat;
     background-size: cover;
+}
+ul{
+    list-style-type: none;
+    padding-inline-start: 0!important;
+    color: red;
+    font-size: x-small;
 }
 
 @media (max-width: 500px) {

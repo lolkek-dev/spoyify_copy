@@ -11,9 +11,11 @@ class SignUpForm(UserCreationForm):
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': 'Password'}))
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': ' reenter password'}))
+        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': ' Reenter password'}))
 
     class Meta:
+        error_messages = {"link": {"invalid": "Not really valid"},  # Only change invalid for link-field
+                          "required": "You forgot something here!"}  # Change the "required" error for all fields
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 

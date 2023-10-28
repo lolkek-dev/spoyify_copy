@@ -10,7 +10,6 @@
     <title>Sing Up</title>
 </head>
 <body>
-<div class='bold-line'></div>
 <div class='container'>
     <div class='window'>
         <div class='overlay'></div>
@@ -27,6 +26,7 @@
                 {% csrf_token %}
                 {% for field in form %}
                     {{ field }}
+                    <p>{{ field.errors }}</p>
                 {% endfor %}
              <button  type="submit" class='ghost-round full-width'>Create Account</button>
             </form>

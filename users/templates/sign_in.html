@@ -28,6 +28,9 @@
                 {% for field in form %}
                     {{ field }}
                 {% endfor %}
+                {% if form.errors %}
+                    <p class="text_error">{{ form.non_field_errors }}</p>
+                {% endif %}
                 <button type="submit" class='ghost-round full-width'>Log In</button>
             </form>
             <div class='spacing'>Нет аккаунта? <a href="{% url 'users:sign_up' %}" class='highlight' style="text-decoration: none">Регистрация в Spotify</a></div>

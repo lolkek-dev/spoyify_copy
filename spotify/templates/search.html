@@ -6,12 +6,12 @@
             <input type="text" name="search" class="h-full rounded-full bg-black border-inherit" placeholder="Что хочешь послушать?">
         </div>
         <div class="container pl-7 pr-7 pt-7 grid grid-cols-5 gap-4">
-            {% for card in music %}
+            {% for card in genre %}
                 <a href="" class="bg-yellow-950 rounded-md h-70">
                     <div class="container py-4 px-4 space-y-1">
-                        <p class="text-white font-bold text-2xl">{{ card.name }}</p>
+                        <p class="text-white font-bold text-2xl">{{ card.genre_name }}</p>
                         <div class="card w-[140px] h-[140px] rounded-md rotate-45 ml-16">
-                            <img class="" src="{{ card.preview.url }}" alt="">
+                            <img class="" src="{{ card.img.url }}" alt="">
                         </div>
                     </div>
                 </a>

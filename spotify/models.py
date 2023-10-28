@@ -13,17 +13,11 @@ class Artist(models.Model):
         return self.nickname
 
 
-class Album(models.Model):
-    preview = models.ImageField(default='album.png')
-    author = models.ForeignKey(Artist, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    release_date = models.DateField(auto_now=True)
 
-    def __str__(self):
-        return self.name
 
 class Genres(models.Model):
     genre_name = models.CharField(max_length=255)
+    img  = models.ImageField()
 
     def __str__(self):
         return self.genre_name
@@ -35,7 +29,6 @@ class Music(models.Model):
     preview = models.ImageField(default='music.png')
     author = models.ForeignKey(Artist, on_delete=models.CASCADE)
     time_length = models.DecimalField(max_digits=20, decimal_places=2, blank=True)
-    release_date = models.DateField(auto_now=True)
     music_file = models.FileField(validators=[validate_is_audio])
     genre = models.ForeignKey(Genres, on_delete=models.CASCADE)
 

@@ -9,7 +9,7 @@
         </div>
         <div class="container pl-7 pr-7 pt-7 grid grid-cols-5 gap-4">
             {% for card in music %}
-                <a href="" class="bg-cardColor rounded-md h-70">
+                <a href="{% url 'spotify:music' card.pk %}" class="bg-cardColor rounded-md h-70">
                     <div class="container py-4 px-4 space-y-1">
                         <div class="card w-[186px] h-[186px] rounded-md">
                             <img src="{{ card.preview.url }}" alt="">
