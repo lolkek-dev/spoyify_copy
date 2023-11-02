@@ -21,7 +21,7 @@ a.button:hover {
 
 .bg-mainColor1 {
     background: #1f1f1f;
-    background: -webkit-linear-gradient(to top, #121212, #1c1c1c);
+        background: -webkit-linear-gradient(to top, #121212, #1c1c1c);
     background: linear-gradient(to top, #121212, #1c1c1c);
 }
 

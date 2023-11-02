@@ -4,6 +4,7 @@ body,
 html {
     margin: 0;
     height: 100%;
+    background-color: black;
 }
 
 input {
@@ -118,7 +119,6 @@ button:focus {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: black;
     height: 100%;
 }
 
