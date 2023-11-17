@@ -13,15 +13,12 @@ class Artist(models.Model):
         return self.nickname
 
 
-
-
 class Genres(models.Model):
     genre_name = models.CharField(max_length=255)
-    img  = models.ImageField()
+    img = models.ImageField()
 
     def __str__(self):
         return self.genre_name
-
 
 
 class Music(models.Model):

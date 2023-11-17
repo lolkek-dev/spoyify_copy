@@ -74,6 +74,12 @@
                 {% if user.is_authenticated %}
                     <div class="bg-mainColor rounded-md w-[79%] h-16 fixed top-0 right-0">
                         <div class="space-x-10 flex justify-end">
+                            <a href="{% url 'spotify:addmusicy' %}" class="flex space-x-2 text-Color1 font-bold pt-4 change-text">
+                                <span>Добавить музыку</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </a>
                             <a href="{% url 'users:sign_out' %}" class="text-Color1 font-bold pt-4 change-text">Выйти</a>
                             <div class="pt-3 pr-5 button">
                                 <a href="" class="">

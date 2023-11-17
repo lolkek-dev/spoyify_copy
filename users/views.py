@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
-
-from users.forms import *
+from . forms import *
 
 
 def sign_up(request):
@@ -24,3 +23,12 @@ def sign_in(request):
 def sign_out(request):
     logout(request)
     return redirect('spotify:home')
+
+
+def EditProfile(request):
+    form = EditProfile(request.POST or None)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        d
+    edit_form = EditProfile(instance=request.user)
+    return render(request, 'edit_profile.html', {'edit_form': edit_form})
