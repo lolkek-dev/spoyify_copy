@@ -6,13 +6,13 @@ from .models import *
 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'input-line full-width', 'placeholder': 'Username'}))
+        widget=forms.TextInput(attrs={'class': 'input-line full-width', 'placeholder': 'Имя пользователя'}))
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'class': 'input-line full-width', 'placeholder': 'Email'}))
+        widget=forms.EmailInput(attrs={'class': 'input-line full-width', 'placeholder': 'Почта'}))
     password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': 'Password'}))
+        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': 'Пароль'}))
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': ' Reenter password'}))
+        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': 'Повторите пароль'}))
 
     class Meta:
         error_messages = {"link": {"invalid": "Not really valid"},  # Only change invalid for link-field
@@ -23,9 +23,9 @@ class SignUpForm(UserCreationForm):
 
 class SignInForm(AuthenticationForm):
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'input-line full-width', 'placeholder': 'Username'}))
+        widget=forms.TextInput(attrs={'class': 'input-line full-width', 'placeholder': 'Имя пользователя'}))
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': 'Password'}))
+        widget=forms.PasswordInput(attrs={'class': 'input-line full-width', 'placeholder': 'Пароль'}))
 
     class Meta:
         model = User

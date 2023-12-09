@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.db.models import Q
 import random
@@ -21,7 +21,9 @@ def search(request):
 
 def music(request, pk):
     music = Music.objects.get(pk=pk)
-    return render(request, 'music.html', {'music': music})
+    mysongg = FavoriteSong.objects.filter(user=request.user)
+
+    return render(request, 'music.html', {'music': music,'mysongg':mysongg})
 
 
 def afternext(request):
@@ -43,6 +45,7 @@ def randommusic(request):
     random_music = Music.objects.get(pk=random_number)
     return render(request, 'random.html', {'random_music': random_music})
 
+
 def MusicAdd(request):
     form = forms.MusicForm(request.POST or None, request.FILES)
     if request.method == 'POST' and form.is_valid():
@@ -51,3 +54,17 @@ def MusicAdd(request):
         return redirect('spotify:home')
     form = forms.MusicForm()
     return render(request, 'music_add.html', {'form': form})
+
+
+def add_to_favorite(request, pk):
+    song = get_object_or_404(Music, pk=pk)
+
+    if not FavoriteSong.objects.filter(user=request.user, song_name=song.pk, ).exists():
+        FavoriteSong.objects.create(user=request.user, song_name=song)
+
+    return redirect('spotify:home')
+
+
+def favorite(request):
+    mysong = FavoriteSong.objects.filter(user=request.user)
+    return render(request, 'favorite.html', {'mysong': mysong})

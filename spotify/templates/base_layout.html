@@ -58,7 +58,7 @@
                     </ul>
                 </div>
                 <div class="bg-mainColor rounded-md h-screen">
-                    <a href="" class="text-Color1 flex px-7 pt-5 change-text">
+                    <a href="{% url 'spotify:favorite' %}" class="text-Color1 flex px-7 pt-5 change-text">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor" class="w-7 h-8">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -114,7 +114,7 @@
                     показывать рекламу, но ты сможешь <br> пользоваться сервисом бесплатно!</p>
             </div>
             <div class="pt-9 pr-2 regbut">
-                <a href="" class="bg-white py-3 px-10 rounded-full text-black font-bold">Зарегистрироваться</a>
+                <a href="{% url 'users:sign_up' %}" class="bg-white py-3 px-10 rounded-full text-black font-bold">Зарегистрироваться</a>
             </div>
         </footer>
     </div>

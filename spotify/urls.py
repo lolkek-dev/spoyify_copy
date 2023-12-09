@@ -9,5 +9,7 @@ urlpatterns = [
     path('some/', views.afternext, name='afternext'),
     path('random/', views.randommusic, name="randommusic"),
     path('addmusic/', views.MusicAdd, name="addmusicy"),
+    path('add_to_favorite/<int:pk>/', views.add_to_favorite, name='add_to_favorite'),
+    path('favorite/', views.favorite, name="favorite"),
 
 ]

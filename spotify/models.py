@@ -6,7 +6,7 @@ from spotify.validators import validate_is_audio
 
 
 class Artist(models.Model):
-    avatar = models.ImageField(default='avatar.png')
+    avatar = models.ImageField()
     nickname = models.CharField(max_length=255)
 
     def __str__(self):
@@ -47,6 +47,14 @@ class PlayList(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class FavoriteSong(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    song_name = models.ForeignKey(Music, on_delete=models.CASCADE)
+
+    def str(self):
+        return
 
 
 class META:

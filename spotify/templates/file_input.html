@@ -1,0 +1,14 @@
+<div class="file is-dark">
+    <label class="file-label">
+        <input type="{{ widget.type }}" class="file-input" name="{{ widget.name }}"
+                {% if widget.value != None %}
+               value="{{ widget.value|stringformat:'s' }}"
+                {% endif %}
+                {% include "django/forms/widgets/attrs.html" %}>
+        <span class="file-cta">
+            <span class="file-label">
+                   Выбрать файл...
+            </span>
+        </span>
+    </label>
+</div>
