@@ -3,7 +3,13 @@
 {% block content %}
     <div class="bg-mainColor1 rounded-md h-full mt-[6%]">
         <div class="mx-auto pl-7 pt-3">
-            <input type="text" name="search" class="h-full rounded-full bg-black border-inherit" placeholder="Что хочешь послушать?">
+            <form action="{% url 'spotify:search' %}" method="get">
+                <input type="text" name="search" class="h-full rounded-full bg-black border-inherit"
+                       placeholder="Что хочешь послушать?">
+                <button type="submit">
+                    Поиск
+                </button>
+            </form>
         </div>
         <div class="container pl-7 pr-7 pt-7 grid grid-cols-5 gap-4">
             {% for card in genre %}
@@ -13,6 +19,18 @@
                         <div class="card w-[140px] h-[140px] rounded-md rotate-45 ml-16">
                             <img class="" src="{{ card.img.url }}" alt="">
                         </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% for card in music %}
+                <a href="{% url 'spotify:music' card.pk %}" class="bg-cardColor rounded-md h-70">
+                    <div class="container py-4 px-4 space-y-1">
+                        <div class="card w-[186px] h-[186px] rounded-md">
+                            <img src="{{ card.preview.url }}" alt="">
+                            <div class="play-button">Play</div>
+                        </div>
+                        <p class="font-bold">{{ card.name }}</p>
+                        <p class="text-Color1 text-sm">{{ card.author }}</p>
                     </div>
                 </a>
             {% endfor %}
